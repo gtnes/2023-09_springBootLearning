@@ -1,5 +1,6 @@
 package com.gtnes.controllerr;
 
+import com.gtnes.model.UserObject;
 import org.apache.catalina.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ public class UserController {
         return "{module: '新增用户'}";
     }
 
+    // 路由传参
     @RequestMapping(value = "/users/{id}",method = RequestMethod.GET)
     @ResponseBody
     public String get(@PathVariable Integer id){
@@ -21,11 +23,12 @@ public class UserController {
         return "{module: '获取用户信息 ID: "+id+"'}";
     }
 
+    // 请求体传参
     @RequestMapping(value = "/users/{id}",method = RequestMethod.PUT)
     @ResponseBody
-    public String update(@RequestBody User user){
-        System.out.println("修改用户信息 ID：" + user);
-        return "{module: '修改用户信息 ID:"+user+"'}";
+    public String update(@RequestBody UserObject data){
+        System.out.println("修改用户信息 ID：" + data);
+        return "{module: '修改用户信息 ID:" + data + " '}";
     }
 
 }
