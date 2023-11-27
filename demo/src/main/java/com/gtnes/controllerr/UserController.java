@@ -26,9 +26,11 @@ public class UserController {
     // 请求体传参
     @RequestMapping(value = "/users/{id}",method = RequestMethod.PUT)
     @ResponseBody
-    public String update(@RequestBody UserObject data){
-        System.out.println("修改用户信息 ID：" + data);
-        return "{module: '修改用户信息 ID:" + data + " '}";
+    public String update(@RequestBody UserObject userObject){
+        String name = userObject.getName();
+        int age = userObject.getAge();
+        System.out.println("修改用户信息 ID：" + name + age);
+        return "{module: '修改用户信息 ID:" + name + age +" '}";
     }
 
 }
