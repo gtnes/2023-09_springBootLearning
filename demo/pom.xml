@@ -28,12 +28,20 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- MyBatis依赖 -->
+		<!--Druid依赖-->
+		<!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
 		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.2.0</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.2.20</version>
 		</dependency>
+
+		<!-- MyBatis依赖 -->
+<!--		<dependency>-->
+<!--			<groupId>org.mybatis.spring.boot</groupId>-->
+<!--			<artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--			<version>2.2.0</version>-->
+<!--		</dependency>-->
 
 		<!-- MyBatis Plus依赖 -->
 		<!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
@@ -49,6 +57,15 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.27</version>
 		</dependency>
+
+		<!-- Lombok依赖 -->
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
