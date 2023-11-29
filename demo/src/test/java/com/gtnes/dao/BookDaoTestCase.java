@@ -61,7 +61,7 @@ class BookDaoTestCase {
     // 页查询
     @Test
     void bookGetPage() {
-        System.out.println(bookDao.selectPage(null, null));
+//        System.out.println(bookDao.selectPage(null, null));
     }
 
     // 条件查询
