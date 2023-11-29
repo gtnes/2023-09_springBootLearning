@@ -1,5 +1,4 @@
 package com.gtnes.domain;
-
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
