@@ -34,5 +34,5 @@ mybatis-plus:
 #      logic-delete-value: 1
 #      logic-not-delete-value: 0
   configuration:
-    # 开启MP日志
+    # 开启MP日志 打印SQL语句
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
