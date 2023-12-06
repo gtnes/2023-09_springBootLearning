@@ -1,5 +1,9 @@
 package com.gtnes.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gtnes.domain.Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,15 +62,36 @@ class BookDaoTestCase {
         System.out.println(bookDao.selectList(null));
     }
 
-    // 页查询
+    // 分页查询
     @Test
     void bookGetPage() {
-//        System.out.println(bookDao.selectPage(null, null));
+        IPage page = new Page(1, 5);
+        bookDao.selectPage(page, null);
+        System.out.println(page.getCurrent());
+        System.out.println(page.getSize());
+        System.out.println(page.getTotal());
+        System.out.println(page.getPages()); // 最大页码值
+        System.out.println(page.getRecords());
     }
 
-    // 条件查询
+    // 条件查询1
     @Test
-    void bookGetBy() {
+    void bookGetBy1() {
+        // 这种写法如果name写错会直接报错
+        QueryWrapper<Book> qw = new QueryWrapper<Book>();
+        qw.like("name", "入门");
+        bookDao.selectList(qw);
+    }
+
+    // 条件查询2
+    @Test
+    void bookGetBy2() {
+        // name为null时不会连接查询条件，及查询所有
+        String name = "入门";
+//        String name = null;
+        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
+        lqw.like(name != null, Book::getName, name);
+        bookDao.selectList(lqw);
     }
 
 }
