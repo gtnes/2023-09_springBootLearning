@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookServiceImpl extends ServiceImpl<BookDao, Book> implements IBookService {
+    // BookDao 实现类，Book 模型类
 
     @Autowired
     private BookDao bookDao;
@@ -29,6 +30,7 @@ public class BookServiceImpl extends ServiceImpl<BookDao, Book> implements IBook
     public boolean bookDelete(Integer id) {
         return bookDao.deleteById(id) > 0;
     }
+
     public IPage<Book> getPage(int currentPage, int pageSize) {
         IPage page = new Page(currentPage, pageSize);
         bookDao.selectPage(page, null);

@@ -1,6 +1,7 @@
 package com.gtnes.controllerr;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.gtnes.controllerr.utils.Result;
 import com.gtnes.domain.Book;
 import com.gtnes.service.IBookService;
 import com.sun.org.apache.xpath.internal.operations.Bool;
@@ -20,36 +21,37 @@ public class BookController {
     private IBookService bookService;
 
     @GetMapping
-    public List<Book> getAll(){
-        return bookService.list();
+    public Result getAll(){
+        return new Result(true, bookService.list());
     }
 
     // http://localhost:8080/books/2
     @GetMapping("{id}")
-    public Book getById(@PathVariable Integer id){
-        return bookService.getById(id);
+    public Result getById(@PathVariable Integer id){
+        return new Result(true, bookService.getById(id));
     }
 
     // @RequestBody: 接收前端传递的json字符串
     @PostMapping
-    public Boolean save(@RequestBody Book book){
-        return bookService.save(book);
+    public Result save(@RequestBody Book book){
+        return new Result(bookService.save(book));
     }
 
     @PutMapping
-    public Boolean update(@RequestBody Book book){
-        return bookService.updateById(book);
+    public Result update(@RequestBody Book book){
+        return new Result(bookService.updateById(book));
     }
 
     @DeleteMapping("{id}")
-    public Boolean delete(@PathVariable Integer id){
-        return bookService.removeById(id);
+    public Result delete(@PathVariable Integer id){
+        return new Result(true, bookService.removeById(id));
     }
 
 
     @GetMapping("{currentPage}/{pageSize}")
-    public IPage<Book> getPage(@PathVariable int currentPage, @PathVariable int pageSize){
-        return bookService.getPage(currentPage, pageSize);
+    public Result getPage(@PathVariable int currentPage, @PathVariable int pageSize){
+        return new Result(true, bookService.getPage(currentPage, pageSize));
+
     }
 
 }
