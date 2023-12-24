@@ -1,7 +1,9 @@
 package com.gtnes.domain;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+
+/*
+书籍 实体类 Domain
+*/
 
 // Lombok简写
 //@Getter
