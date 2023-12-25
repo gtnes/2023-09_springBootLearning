@@ -16,8 +16,10 @@ public class BookController {
     @Autowired
     private IBookService bookService;
 
-    @GetMapping
-    public Result FindBookById(){
-        return new Result(true, bookService.FindBookById(id));
+    @GetMapping("/findBookById")
+    public Result findBookById(@RequestParam String id) throws Exception {
+
+//        return new Result(true,bookService .FindBookById(id));
+        return Result.ok(bookService.FindBookById(id));
     }
 }

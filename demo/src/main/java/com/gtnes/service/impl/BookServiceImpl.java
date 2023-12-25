@@ -1,5 +1,6 @@
 package com.gtnes.service.impl;
 
+import com.gtnes.entity.Book;
 import com.gtnes.mapper.BookMapper;
 import com.gtnes.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ public class BookServiceImpl implements IBookService {
     private BookMapper bookMapper;
 
     @Override
-    public void FindBookById(String id) throws Exception {
-        bookMapper.FindBookById(id);
+    public Book FindBookById(String id) throws Exception {
+        return bookMapper.findBookById(id);
     }
 
 }

@@ -1,8 +1,10 @@
 package com.gtnes.service;
 
 
+import com.gtnes.entity.Book;
+
 public interface IBookService {
 
-    void FindBookById(String id) throws Exception;
+    Book FindBookById(String id) throws Exception;
 
 }

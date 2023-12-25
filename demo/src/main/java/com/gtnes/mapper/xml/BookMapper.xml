@@ -6,7 +6,7 @@
         SELECT name, author, publish, pages, price FROM `book` ORDER BY price DESC
     </select>
     <!--搜索护具-->
-    <select id="FindBookById" parameterType="java.String" resultType="mapper.BookMapper">
+    <select id="findBookById" parameterType="java.String" resultType="mapper.BookMapper">
         SELECT *from Book WHERE id=#{id}
     </select>
 </mapper>
