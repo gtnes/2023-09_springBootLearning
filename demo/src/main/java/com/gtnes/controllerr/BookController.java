@@ -20,6 +20,6 @@ public class BookController {
     public Result findBookById(@RequestParam String id) throws Exception {
 
 //        return new Result(true,bookService .FindBookById(id));
-        return Result.ok(bookService.FindBookById(id));
+        return Result.ok(bookService.findBookById(id));
     }
 }

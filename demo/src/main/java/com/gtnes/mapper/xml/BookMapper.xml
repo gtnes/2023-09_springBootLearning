@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gtnes.mapper.BookMapper">
     <!--查询书记并按照价格降序排序-->
-    <select id="bookPriceSortDown" parameterType="java.String" resultType="mapper.BookMapper">
-        SELECT name, author, publish, pages, price FROM `book` ORDER BY price DESC
-    </select>
+<!--    <select id="bookPriceSortDown" resultType="com.gtnes.enity.Book">-->
+<!--        SELECT name, author, publish, pages, price FROM `book` ORDER BY price DESC-->
+<!--    </select>-->
     <!--搜索护具-->
-    <select id="findBookById" parameterType="java.String" resultType="mapper.BookMapper">
-        SELECT *from Book WHERE id=#{id}
+    <select id="findBookById" resultType="com.gtnes.entity.Book">
+        SELECT * from Book WHERE id = #{id}
     </select>
 </mapper>

@@ -7,13 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-/**
- * @Auther: Hades
- * @Date: 2023/9/25
- * @Description: Test
- * @PROJECT_NAME: new-test
- * @Package_name: IntelliJ IDEA
- **/
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -5,6 +5,6 @@ import com.gtnes.entity.Book;
 
 public interface IBookService {
 
-    Book FindBookById(String id) throws Exception;
+    Book findBookById(String id) throws Exception;
 
 }

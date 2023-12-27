@@ -23,6 +23,8 @@ spring:
 
 # MP相关配置
 mybatis-plus:
+  #配置mapper xml文件的路径
+  mapper-locations: classpath:com/gtnes/mapper/xml/*.xml
   global-config:
     db-config:
       # 主键类型 0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (idWorker)", 3:"全局唯一ID (UUID)"

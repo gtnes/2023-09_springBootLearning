@@ -13,7 +13,7 @@ public class BookServiceImpl implements IBookService {
     private BookMapper bookMapper;
 
     @Override
-    public Book FindBookById(String id) throws Exception {
+    public Book findBookById(String id) throws Exception {
         return bookMapper.findBookById(id);
     }
 
