@@ -1,6 +1,6 @@
 package com.gtnes.controllerr;
 
-import com.gtnes.controllerr.utils.Result;
+import com.gtnes.common.Result;
 import com.gtnes.entity.Book;
 import com.gtnes.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,6 @@ public class BookController {
 
     @GetMapping("/findBookById")
     public Result findBookById(@RequestParam String id) throws Exception {
-
-//        return new Result(true,bookService .FindBookById(id));
         return Result.ok(bookService.findBookById(id));
     }
 }
