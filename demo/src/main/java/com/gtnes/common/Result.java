@@ -39,14 +39,17 @@ public class Result {
     private Object data;
 
     public static Result ok() {
+
         return new Result(true, null, 200, System.currentTimeMillis(), null);
     }
 
     public static Result ok(Object data) {
+
         return new Result(true, null, 200, System.currentTimeMillis(), data);
     }
 
     public static Result ok(List<?> data) {
+
         return new Result(true, null, 200, System.currentTimeMillis(), data);
     }
 

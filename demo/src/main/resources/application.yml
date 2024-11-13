@@ -5,12 +5,11 @@ server:
 # mySql8需要设置时区
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://39.105.108.80:3306/test_database?serverTimezone=UTC
-    username: test_database
-    password: yHKSmGWJztyP56Hi
-    # druid写法1
     type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.100.86:3306/spring-test?serverTimezone=UTC
+    username: spring-test
+    password: 8KRLyN32HAtcxi5a
 
 #spring:
 #  datasource:
